@@ -25,9 +25,9 @@ const HeroSec = () => {
             <p className="hover:text-[#466666]"> Home</p>
             <p className="hover:text-[#466666]"> Features</p>
             <p className="hover:text-[#466666]"> About</p>
-            <a className="bg-[#215015] text-[#BAE0E0] items-center align-middle text-3xl py-2 px-4 rounded-xl hover:bg-[#BAE0E0] hover:text-[#215015]" href="/main">
+            <link className="bg-[#215015] text-[#BAE0E0] items-center align-middle text-3xl py-2 px-4 rounded-xl hover:bg-[#BAE0E0] hover:text-[#215015]" href="/main">
               Get Started
-            </a>
+            </link>
           </span>
         </nav>
         <div className="h-full w-full flex justify-between relative top-30 ">

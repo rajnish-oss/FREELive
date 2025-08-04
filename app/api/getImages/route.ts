@@ -5,7 +5,7 @@ export async function POST(req: NextRequest) {
   const data = await req.json();
 
   const res = await Promise.all(data.dest.map((place:string) => {
-    let config = {
+    const config = {
       method: "post",
       maxBodyLength: Infinity,
       url: "https://google.serper.dev/images",
@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
       try {
         const response = await axios.request(config);
         const data = response.data.images
-          .map((img: any) => img.imageUrl)
+          .map((img:{imageUrl:string}) => img.imageUrl)
           .slice(0, 10);
         return data;
       } catch (error) {

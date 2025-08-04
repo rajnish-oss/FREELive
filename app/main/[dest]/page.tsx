@@ -30,7 +30,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import data from "@/utils/data";
 import { Italiana, Cinzel, Merriweather_Sans } from "next/font/google";
 import CRating from "@/components/ui/CRating";
 import axios from "axios";
