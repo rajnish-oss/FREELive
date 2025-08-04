@@ -49,6 +49,11 @@ const MW = Merriweather_Sans({
   subsets:["latin"]
 });
 
+interface ImageData {
+  place: string;
+  image: string[];
+}
+
 export interface DestinationData {
   name?: string;
   qoute?: string;
@@ -115,8 +120,8 @@ export default function page({
   const [data, setData] = useState<DestinationData>({});
   const [error, setError] = useState<boolean>(false);
   const [load, setLoad] = useState<boolean>(true);
-  const [aImg, setAImg] = useState<string[]>([]);
-  const [spi, setSPI] = useState<string[]>([]);
+  const [aImg, setAImg] = useState<ImageData[]>([]);
+  const [spi, setSPI] = useState<ImageData[]>([]);
   const dest = use(params).dest;
 
   useEffect(() => {
@@ -232,7 +237,7 @@ export default function page({
               </h1>
               <div className="flex items-center gap-2 mb-4">
                 <div className="flex items-center">
-                  <CRating value={data.rating} />
+                  <CRating value={data.rating ?? 0} />
                   <span className="ml-2 text-gray-600">
                     {data.rating} (1,247 reviews)
                   </span>
@@ -285,13 +290,13 @@ export default function page({
                 <Carousel>
                   <CarouselContent>
                     {aImg
-                      .filter((data) => attraction === data.place)
-                      .map((data, index) =>
-                        data.image.map((img, index) => (
+                      .filter((imgData) => attraction === imgData.place)
+                      .map((imgData, index) =>
+                        imgData.image.map((img, index) => (
                           <CarouselItem key={index}>
                             <img
                               src={img}
-                              alt={data.place}
+                              alt={imgData.place}
                               className=" w-full h-85 object-cover relative bottom-4"
                             />
                           </CarouselItem>
@@ -317,7 +322,7 @@ export default function page({
           Things to Do
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {Object.entries(data.thingsToDo)?.map(([category, items]) => (
+          {data.thingsToDo && Object.entries(data.thingsToDo)?.map(([category, items]) => (
             <Card key={category} className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="text-xl text-gray-900 flex gap-3">
@@ -352,7 +357,7 @@ export default function page({
           Best Time to Visit
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          {Object.entries(data.seasonsInfo)?.map(([season, item]) => (
+          {data.seasonsInfo && Object.entries(data.seasonsInfo)?.map(([season, item]) => (
             <Card className={`border-2 hover:shadow-lg transition-shadow`}>
               <div className="w-full flex justify-center items-center ">
                 {season === "summer" ? (
@@ -391,7 +396,7 @@ export default function page({
             </div>
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">By Air</h3>
-              <p className="text-gray-600 text-sm">{data?.howToReach.flight}</p>
+              <p className="text-gray-600 text-sm">{data.howToReach && data?.howToReach.flight}</p>
             </div>
 
             <div className="bg-sky-100 p-3 rounded-full">
@@ -399,7 +404,7 @@ export default function page({
             </div>
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">By Air</h3>
-              <p className="text-gray-600 text-sm">{data?.howToReach.road}</p>
+              <p className="text-gray-600 text-sm">{ data.howToReach && data?.howToReach.road}</p>
             </div>
 
             <div className="bg-sky-100 p-3 rounded-full">
@@ -407,7 +412,7 @@ export default function page({
             </div>
             <div>
               <h3 className="font-semibold text-gray-900 mb-2">By Air</h3>
-              <p className="text-gray-600 text-sm">{data?.howToReach.trek}</p>
+              <p className="text-gray-600 text-sm">{data.howToReach && data?.howToReach.trek}</p>
             </div>
           </div>
 
@@ -442,7 +447,7 @@ export default function page({
           Price Breakdown ({data.tripDuration})
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {Object.entries(data?.priceBreakdown)?.map(
+          {data.priceBreakdown && Object.entries( data?.priceBreakdown)?.map(
             ([key, tier]: [string, any]) => (
               <Card
                 key={key}
