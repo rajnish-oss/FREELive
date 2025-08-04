@@ -26,6 +26,7 @@ import { useRouter } from "next/navigation";
 
 const DM = DM_Serif_Display({
   weight: "400",
+  subsets:["latin"]subsets:["latin"],
 });
 
 interface Item {

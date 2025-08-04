@@ -3,9 +3,11 @@ import { Goldman, Gochi_Hand } from "next/font/google";
 
 const goldman = Goldman({
   weight: "400",
+  subsets:["latin"]
 });
 const Gochi = Gochi_Hand({
   weight: "400",
+  subsets:["latin"]
 });
 
 const HeroSec = () => {

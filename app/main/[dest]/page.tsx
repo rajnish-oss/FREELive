@@ -37,14 +37,17 @@ import axios from "axios";
 
 const italian = Italiana({
   weight: "400",
+  subsets:["latin"]
 });
 
 const cinzel = Cinzel({
   weight: "400",
+  subsets:["latin"]
 });
 
 const MW = Merriweather_Sans({
   weight: "400",
+  subsets:["latin"]
 });
 
 export interface DestinationData {
