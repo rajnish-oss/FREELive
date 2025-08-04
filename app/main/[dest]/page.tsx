@@ -171,22 +171,22 @@ export default function page({
               <div className="text-gray-900 font-bold text-2xl">FREELive</div>
               <nav className="hidden md:flex items-center space-x-8 text-gray-700">
                 <a
-                  href="#"
+                  href="/"
                   className="hover:text-gray-900 transition-colors font-medium"
                 >
-                  Trip
+                  Home
                 </a>
                 <a
-                  href="#"
+                  href="#attraction"
                   className="hover:text-gray-900 transition-colors font-medium"
                 >
-                  Adventure
+                  Attraction
                 </a>
                 <a
-                  href="#"
+                  href="#cost"
                   className="hover:text-gray-900 transition-colors font-medium"
                 >
-                  Gallery
+                  Cost
                 </a>
               </nav>
             </div>
@@ -279,7 +279,7 @@ export default function page({
       </section>
 
       {/* Must-See Attractions */}
-      <section>
+      <section id="attraction">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
           Must-See Attractions
         </h2>
@@ -403,7 +403,7 @@ export default function page({
               <Train className="w-6 h-6 text-sky-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">By Air</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">By Road</h3>
               <p className="text-gray-600 text-sm">{ data.howToReach && data?.howToReach.road}</p>
             </div>
 
@@ -411,7 +411,7 @@ export default function page({
               <Car className="w-6 h-6 text-sky-600" />
             </div>
             <div>
-              <h3 className="font-semibold text-gray-900 mb-2">By Air</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">By Foot</h3>
               <p className="text-gray-600 text-sm">{data.howToReach && data?.howToReach.trek}</p>
             </div>
           </div>
@@ -442,7 +442,7 @@ export default function page({
       </section>
 
       {/* Price Breakdown */}
-      <section>
+      <section id="cost" >
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
           Price Breakdown ({data.tripDuration})
         </h2>

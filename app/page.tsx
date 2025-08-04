@@ -222,30 +222,30 @@ export default function TravelDiscoveryLanding() {
               <p className="text-gray-400">Find places that match your soul</p>
             </div>
             <div className="flex gap-8">
-              <link
+              <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 About
-              </link>
-              <link
+              </a>
+              <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 Contact
-              </link>
-              <link
+              </a>
+              <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 Instagram
-              </link>
-              <link
+              </a>
+              <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 Terms
-              </link>
+              </a>
             </div>
           </div>
           <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
