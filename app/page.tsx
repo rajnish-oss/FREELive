@@ -1,6 +1,6 @@
 "use client";
 
-import type React from "react";
+import  React,{useEffect} from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
@@ -128,6 +128,14 @@ export default function TravelDiscoveryLanding() {
   const [chatOpen, setChatOpen] = useState(false);
   const [type1, setType1] = useState<boolean>(true);
   const [type2, setType2] = useState<boolean>(true);
+
+  useEffect(() => {
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      // Redirect or block
+      window.location.href = "/No-Mob"; // or show alert, blank screen, etc.
+    }
+  }, []);
 
   useGSAP(()=>{
     
