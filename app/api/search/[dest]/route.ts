@@ -6,7 +6,7 @@ const ai = new GoogleGenAI({});
 
 function getImage(place: string){
      
-  let config = {
+  const config = {
   method: 'post',
   maxBodyLength: Infinity,
   url: 'https://google.serper.dev/images',
