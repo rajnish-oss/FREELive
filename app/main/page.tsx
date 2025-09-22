@@ -48,14 +48,7 @@ const page = () => {
   const [place,setPlace] = useState<string>('')
   const router = useRouter()
 
-  console.log(data);
-
-  data.map((item) => {
-    {
-      console.log(item.info.cost);
-    }
-  });
-
+ 
   const handleClick = (dest: string) => {
    router.push(`/main/${dest}`)
   }

@@ -2,7 +2,7 @@ import { GoogleGenAI, Type } from "@google/genai";
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
 import { getJson } from "serpapi";
-const ai = new GoogleGenAI({});
+// console.log("key",process.env.GEMINI_API_KEY)
 
 function getImage(place: string){
      
@@ -38,7 +38,7 @@ export async function POST(req:NextRequest) {
     if (!place) {
       return NextResponse.json({ error: "Missing place" }, { status: 400 });
     }
-
+     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: `

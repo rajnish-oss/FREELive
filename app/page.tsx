@@ -144,16 +144,8 @@ export default function TravelDiscoveryLanding() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real app, this would trigger the search functionality
-    console.log("Searching for:", searchQuery);
+   
   };
-
-  // setInterval(()=>{
-  //   setType1(!type1)
-  // },6000)
-
-  // setInterval(()=>{
-  //   setType2(!type2)
-  // },3000)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-blue-50 to-amber-50">
